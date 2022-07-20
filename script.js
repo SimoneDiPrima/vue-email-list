@@ -3,23 +3,30 @@ console.log(`vue ok`,Vue);
 const root = new Vue({
     el:`#root`,
     data:{
-        allEmail:  9,
+        allEmail:  10,
         emails:[]
     },
     methods:{
         getrandomEmail(){
-            for(let i=1;i<= 10; i++ ){
+            console.log(this.allEmail)
+            for(let i=1; i <= this.allEmail; i++ ){
+               
                 axios.get(`https://flynn.boolean.careers/exercises/api/random/mail`)
                 .then((answer)=>{
-                    const email = answer.data.response
+                    
+                    let email = answer.data.response
                     this.emails.push(email)
+                    console.log(this.emails)
+
+                    
                 })
-    
+                
             }
+            
         }
     },
     created(){
-       return this.getrandomEmail(`email`)
+       return this.getrandomEmail();
     }
     
 
