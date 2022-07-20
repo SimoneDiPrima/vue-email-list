@@ -16,10 +16,10 @@
 </head>
 <body>
 
-    <div class="container" id="root">
+    <div class="container" id="root" >
         <div class="row">
             <div class="col">
-                <ul><li v-for="email in emails">{{ email }}</li></ul>
+                <ul v-if="emails.length > allEmail"><li v-for="email in emails">{{ email }}</li></ul>
             </div>
         </div>
     </div>
